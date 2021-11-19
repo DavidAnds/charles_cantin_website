@@ -1,13 +1,25 @@
 .logoBox {
     width: 60px;
+    margin-left: 10px;
 }
 
 .logoBox img {
     width: 100%;
 }
+@media screen and (min-width: 700px) {
+    .logoBox {
+        margin-left: 40px;
+    }
+}
 
 @media screen and (min-width: 900px) {
     .logoBox {
         width: 80px;
+    }
+
+}
+@media screen and (min-width: 1200px) {
+    .logoBox {
+        margin-left: 0;
     }
 }

@@ -25,7 +25,7 @@ export default function Home() {
                 <nav>
                     <ul>
                         <li>
-                            <Link href="/galerie">
+                            <Link href="/gallery">
                             <a>Galerie</a>
                             </Link>
                         </li>
@@ -35,7 +35,7 @@ export default function Home() {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/tarifs">
+                            <Link href="/prices">
                               <a>Tarifs</a>
                             </Link>
                         </li>

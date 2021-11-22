@@ -1,0 +1,135 @@
+/* *****************************
+************************ Filter */
+.filter {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 96%;
+    max-width: 1220px;
+    margin-inline: auto;
+    position: relative;
+    z-index: 100;
+}
+.filter__btn {
+    display: block;
+    background-color: white;
+    padding: 10px 5px;
+    width: 100px;
+    border: none;
+    color: var(--dark-blue);
+    font-family: var(--font-crimson);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border: 2px solid var(--dark-blue);
+}
+.filter__btn:hover {
+    background-color: var(--dark-blue);
+    color: white;
+}
+.filter__btn_blue {
+    background-color: var(--dark-blue);
+    color: white;
+}
+.filter__btn_blue:hover {
+    background-color: var(--blue);
+}
+.filter__dropdown {
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    display: none;
+}
+.filter__dropdown_active {
+    opacity: 1;
+    display: block;
+}
+
+
+/* *****************************
+************************ Galery */
+.gallery {
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.gallery__item {
+    width: 100%;
+}
+
+/*  Image */
+.gallery__imgBox {
+    position: relative;
+    overflow: hidden;
+    height: 60vw;
+    width: 100%;
+}
+.gallery__img {
+    width: 100%;
+}
+
+/* Text */
+.gallery__textBox {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-inline: 45px;
+}
+.gallery__title {
+    font-size: 1.25rem;
+    color: var(--dark-blue);
+    font-family: var(--font-crimson);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+.gallery__text {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-family: var(--font-josefin);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--grayish-blue);
+}
+
+/* *****************************
+************************ Media */
+
+@media screen and (min-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+    }
+    .gallery__imgBox {
+        height: 30vw;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .filter {
+        margin-top: 0px;
+    }
+    .filter__btn {
+        font-size: 1.2rem;
+        width: 140px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .gallery__title {
+        font-size: 1.4rem;
+    }
+    .gallery__text {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .gallery__imgBox {
+        height: 20vw;
+    }
+}

@@ -1,4 +1,4 @@
-.container {
+.navbar {
     padding-block: 5px;
     background-color: white;
     z-index: 1000;
@@ -11,7 +11,7 @@
     position: relative;
 }
 
-.navBtn {
+.navbar__btn {
     margin-right: 10px;
     border: none;
     background: none;
@@ -20,7 +20,7 @@
     color: var(--light-black);
 }
 
-.nav {
+.navbar__nav {
     position: absolute;
     background-color: white;
     top: 60px;
@@ -30,23 +30,23 @@
     transition: .2s all ease-in;
 }
 
-.active {
+.navbar__nav_active {
     transform: translateY(0);
     transition: .2s all ease-out;
 }
 
-.nav ul{
+.nav__list{
     list-style: none;
     text-align: center;
 }
 
-.nav li{
+.nav__item{
     border-bottom: 1px solid var(--dark-blue);
     padding-block: 20px;
     cursor: pointer;
 }
 
-.nav a {
+.nav__link {
     display: block;
     font-size: 1.2rem;
     letter-spacing: .08em;
@@ -55,32 +55,32 @@
     width: 100%;
 }
 
-.nav li:hover {
+.nav__item:hover {
     background-color: var(--light-gray);
 }
 
 @media screen and (min-width: 700px){
-    .navBtn{
+    .navbar__btn{
         display: none;
     }
-    .nav {
+    .navbar__nav {
         position: static;
         transform: translateY(0);
         margin-right: 40px;
     }
-    .nav ul {
+    .nav__list {
         border-bottom: none;
         display: flex;
         align-items: center;
         justify-content: end;
     }
-    .nav li {
+    .nav__item{
         border-bottom: none;
     }
-    .nav li:not(:first-child) {
+    .nav__item:not(:first-child) {
         margin-left: 50px;
     }
-    .nav li:hover {
+    .nav__item:hover {
         background-color: white;
         border-bottom: 1px solid var(--light-black);
         padding-bottom: 4px;
@@ -89,14 +89,14 @@
 
 @media screen and (min-width: 900px){
 
-    .nav li:not(:first-child) {
+    .nav__item:not(:first-child) {
         margin-left: 70px;
     }
 }
 
 @media screen and (min-width: 1200px){
 
-   .nav {
+   .navbar__nav{
        margin-right: 0;
    }
 }

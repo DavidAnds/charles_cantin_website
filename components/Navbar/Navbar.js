@@ -11,30 +11,30 @@ export default function Navbar() {
     }
 
     return (
-        <div className={style.container}>
+        <div className={style.navbar}>
             <LogoBox />
 
-            <button className={style.navBtn} onClick={toggleNav}>
+            <button className={style.navbar__btn} onClick={toggleNav}>
                 {
                     toggle? 'x': "="
                 }
             </button>
 
-            <nav className={toggle? `${style.nav} ${style.active}`  : style.nav}>
-                <ul>
-                    <li>
-                        <Link href='/galerie'>
-                            <a>Galerie</a>
+            <nav className={toggle? `${style.navbar__nav} ${style.navbar__nav_active}`  : style.navbar__nav}>
+                <ul className={style.nav__list}>
+                    <li className={nav__item}>
+                        <Link href='/gallery'>
+                            <a className={nav__link}>Galerie</a>
                         </Link>
                     </li>
-                    <li>
+                    <li className={nav__item}>
                         <Link href='/contact'>
-                            <a>Contact</a>
+                            <a className={nav__link}>Contact</a>
                         </Link>
                     </li>
-                    <li>
-                        <Link href='/tarifs'>
-                            <a>Tarifs</a>
+                    <li className={nav__item}>
+                        <Link href='/prices'>
+                            <a className={nav__link}>Tarifs</a>
                         </Link>
                     </li>
                 </ul>

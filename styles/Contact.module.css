@@ -1,0 +1,45 @@
+.contact {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    width: 96%;
+    margin-inline: auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info{
+    font-size: 1.125rem;
+    font-family: var(--font-crimson);
+    margin-left: 10px;
+    color: var(--light-black);
+}
+
+.info__name{
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.info__mail{
+    letter-spacing: .03em;
+}
+
+.form {
+    margin-top: 40px;
+}
+
+@media screen  and (min-width: 700px){
+   .contact{
+       flex-direction: row;
+       justify-content: space-between;
+   }
+
+   .form {
+       align-self: flex-start;
+       margin-top: 0;
+       width: 50%;
+   }
+
+    
+}

@@ -82,7 +82,7 @@
     color: var(--dark-blue);
     font-family: var(--font-crimson);
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: .02em;
 }
 .gallery__text {
     margin-top: 10px;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import LogoBox from "../LogoBox/LogoBox";
-import style from "./Navbar.module.css";
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
     const [toggle, setToggle] = useState(false);
@@ -11,30 +11,30 @@ export default function Navbar() {
     }
 
     return (
-        <div className={style.navbar}>
+        <div className={styles.navbar}>
             <LogoBox />
 
-            <button className={style.navbar__btn} onClick={toggleNav}>
+            <button className={styles.navbar__btn} onClick={toggleNav}>
                 {
                     toggle? 'x': "="
                 }
             </button>
 
-            <nav className={toggle? `${style.navbar__nav} ${style.navbar__nav_active}`  : style.navbar__nav}>
-                <ul className={style.nav__list}>
-                    <li className={nav__item}>
+            <nav className={toggle? `${styles.navbar__nav} ${styles.navbar__nav_active}`  : styles.navbar__nav}>
+                <ul className={styles.nav__list}>
+                    <li className={styles.nav__item}>
                         <Link href='/gallery'>
-                            <a className={nav__link}>Galerie</a>
+                            <a className={styles.nav__link}>Galerie</a>
                         </Link>
                     </li>
-                    <li className={nav__item}>
+                    <li className={styles.nav__item}>
                         <Link href='/contact'>
-                            <a className={nav__link}>Contact</a>
+                            <a className={styles.nav__link}>Contact</a>
                         </Link>
                     </li>
-                    <li className={nav__item}>
+                    <li className={styles.nav__item}>
                         <Link href='/prices'>
-                            <a className={nav__link}>Tarifs</a>
+                            <a className={styles.nav__link}>Tarifs</a>
                         </Link>
                     </li>
                 </ul>

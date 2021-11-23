@@ -1,5 +1,5 @@
 {
-  "name": "charles_cantin_website",
+  "name": "charles_cantin-site",
   "private": true,
   "scripts": {
     "dev": "next dev",

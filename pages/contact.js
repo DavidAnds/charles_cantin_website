@@ -1,9 +1,10 @@
-import React from 'react'
-import FontLink from '../components/FontLink/FontLink'
-import Footer from '../components/Footer/Footer'
-import Navbar from '../components/Navbar/Navbar'
-import Title from '../components/Title/Title'
-
+import React from "react";
+import FontLink from "../components/FontLink/FontLink";
+import Footer from "../components/Footer/Footer";
+import Form from "../components/Form/Form";
+import Navbar from "../components/Navbar/Navbar";
+import Title from "../components/Title/Title";
+import styles from "../styles/Contact.module.css";
 
 export default function contact() {
     return (
@@ -11,8 +12,21 @@ export default function contact() {
             <FontLink />
             <Navbar />
             <Title>Contact</Title>
-            <Footer/>
-            
+
+            <div className={styles.contact}>
+                <div className={styles.info}>
+                    <p className={styles.info__name}>Charles Cantin</p>
+                    <p className={styles.info__mail}>
+                        CharlesCantinPro@test.fr
+                    </p>
+                </div>
+
+                <div className={styles.form}>
+                    <Form />
+                </div>
+            </div>
+
+            <Footer />
         </div>
-    )
+    );
 }

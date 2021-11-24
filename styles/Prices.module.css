@@ -1,1 +1,122 @@
+/* *******************************
+********************  Prices container */
+.prices {
+    max-width: 1200px;
+    width: 96%;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+}
 
+/* *******************************
+********************  Prices Item */
+.prices__item {
+    margin-top: 30px;
+}
+
+/* *******************************
+********************  Prices text Box */
+.prices__textBox {
+    max-width: 450px;
+    margin-inline: auto;
+}
+.prices__title {
+    font-family: var(--font-josefin);
+    color: var(--dark-blue);
+    font-weight: 600;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+}
+.prices__text {
+    margin-top: 20px;
+    font-family: var(--font-crimson);
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+    color: var(--light-black);
+}
+.prices__price {
+    margin-top: 20px;
+    text-align: end;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+    font-family: var(--font-josefin);
+}
+
+/* *******************************
+********************  Prices text Box */
+.prices__imgBox {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    max-width: 400px;
+    margin-inline: auto;
+}
+.prices__img {
+    width: 100%;
+}
+
+/* *******************************
+********************  Media */
+@media screen and (max-width: 350px) {
+    .prices__text {
+        font-size: 1rem;
+    }
+    .prices__title {
+        font-size: 1.5rem;
+        letter-spacing: 0.02em;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .prices__text {
+        font-size: 1.2rem;
+    }
+    .prices__title {
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .prices {
+        grid-template-columns: 1fr;
+    }
+
+    .prices__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .prices__item_reverse {
+        flex-direction: row-reverse;
+    }
+
+    .prices__textBox {
+        width: 50%;
+    }
+    .prices__text {
+        font-size: 1rem;
+    }
+    .prices__title {
+        font-size: 1.5rem;
+    }
+
+    .prices__imgBox {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .prices__textBox {
+        width: 50%;
+    }
+    .prices__text {
+        font-size: 1.2rem;
+    }
+    .prices__title {
+        font-size: 1.75rem;
+    }
+
+    .prices__imgBox {
+        width: 50%;
+    }
+}

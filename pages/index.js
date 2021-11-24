@@ -1,12 +1,16 @@
+import { useState } from "react";
 import Head from "next/head";
 import style from "../styles/Home.module.css";
 import Link from "next/link"
 import LogoBox from "../components/LogoBox/LogoBox";
 import FontLink from "../components/FontLink/FontLink";
 
-export default function Home() {
+export default function Home(props) {
+    
+    const [background, setBackground] = useState(`http://localhost:1337${props.data.background.url}`)
+    
     return (
-        <div className={style.home}>
+        <div className={style.home} style={{backgroundImage: 'url' + '(' + background + ')'}} >
             <FontLink/>
             <Head>
                 <title>Charles Cantin - Accueil</title>
@@ -19,24 +23,24 @@ export default function Home() {
 
            <LogoBox />
 
-            <div className={style.boxTitle}>
-                <h1>Charles Cantin</h1>
-                <h2>Photographe</h2>
-                <nav>
-                    <ul>
-                        <li>
+            <div className={style.home__boxTitle}>
+                <h1 className={style.home__title}>Charles Cantin</h1>
+                <h2 className={style.home__subTitle}>Photographe</h2>
+                <nav className={style.home__nav}>
+                    <ul className={style.nav__list}>
+                        <li className={style.nav__item}>
                             <Link href="/gallery">
-                            <a>Galerie</a>
+                            <a className={style.nav__link}>Galerie</a>
                             </Link>
                         </li>
-                        <li>
+                        <li className={style.nav__item}>
                             <Link href="/contact">
-                              <a>Contact</a>
+                              <a className={style.nav__link}>Contact</a>
                             </Link>
                         </li>
-                        <li>
+                        <li className={style.nav__item}>
                             <Link href="/prices">
-                              <a>Tarifs</a>
+                              <a className={style.nav__link}>Tarifs</a>
                             </Link>
                         </li>
                     </ul>
@@ -44,4 +48,15 @@ export default function Home() {
             </div>
         </div>
     );
+}
+
+export async function getStaticProps() {
+    const gallery = await fetch("http://localhost:1337/home-background");
+    const data = await gallery.json();
+
+    return {
+        props: {
+            data,
+        },
+    };
 }

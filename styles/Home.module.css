@@ -1,14 +1,14 @@
+
 .home {
     padding-top: 20px;
     padding-inline: 40px;
     height: 100vh;
     width: 100%;
-    background-image: url("../public/asset/mariage-1.jpg");
     background-position: center;
     background-size: cover;
 }
 
-.boxTitle {
+.home__boxTitle {
     background-color: hsla(0, 0%, 100%, 0.88);
     width: 90%;
     max-width: 650px;
@@ -23,7 +23,7 @@
     font-family: var(--font-crimson);
 }
 
-.boxTitle h1 {
+.home__title {
     font-family: var(--font-josefin);
     font-weight: 600;
     letter-spacing: 0.2em;
@@ -31,7 +31,7 @@
     font-size: 2rem;
 }
 
-.boxTitle h2 {
+.home__subTitle {
     margin-top: 20px;
     font-weight: 400;
     font-size: 1.4rem;
@@ -40,7 +40,7 @@
     letter-spacing: 0.1em;
 }
 
-.boxTitle ul {
+.nav__list {
     margin-top: 50px;
     list-style: none;
     display: flex;
@@ -48,79 +48,74 @@
     justify-content: center;
 }
 
-.boxTitle li:not(:first-child) {
+.nav__item:not(:first-child) {
     margin-left: 50px;
 }
 
-.boxTitle a {
+.nav__link {
     font-size: 1.25rem;
     font-style: italic;
     color: var(--black);
     letter-spacing: 0.08em;
     cursor: pointer;
 }
-.boxTitle a:hover {
+.nav__link:hover {
     color: var(--grayish-blue);
     text-decoration: underline;
 }
 
 @media screen and (min-width: 550px) {
-    .boxTitle {
+    .home__boxTitle {
         width: 70%;
     }
 }
 
 @media screen and (min-width: 650px) {
-    .boxTitle {
+    .home__boxTitle {
         width: 70%;
     }
 
-    .boxTitle h1 {
+    .home__title {
         font-size: 2.5rem;
     }
 
-    .boxTitle h2 {
+    .home__subTitle {
         font-size: 1.6rem;
     }
 
-    .boxTitle a {
+    .nav__link {
         font-size: 1.3rem;
     }
 }
 
 @media screen and (min-width: 800px) {
-    .boxTitle h1 {
+    .home__title {
         font-size: 2.8rem;
     }
 
-    .boxTitle h2 {
+    .home__subTitle {
         font-size: 1.8rem;
     }
 
-    .boxTitle a {
+    .nav__link {
         font-size: 1.4rem;
     }
 }
 
 @media screen and (min-width: 900px) {
-    .logoBox {
-        width: 80px;
-        margin-left: 30px;
-    }
-
-    .boxTitle h1 {
+    .home__title {
         font-size: 3.5rem;
     }
 
-    .boxTitle h2 {
+    .home__subTitle {
         font-size: 2.4rem;
     }
 
-    .boxTitle li:not(:first-child) {
+    .nav__item:not(:first-child) {
         margin-left: 100px;
     }
 
-    .boxTitle a {
+    .nav__link {
         font-size: 1.6rem;
     }
 }

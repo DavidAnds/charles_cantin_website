@@ -9,3 +9,38 @@
     font-size: 1rem;
     line-height: 1.5em;
 }
+
+.footer__iconBox {
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer__instaBox{
+    width: 32px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.footer__fbBox{
+    cursor: pointer;
+}
+.footer__text {
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 900px) {
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding-inline: 100px;
+}
+.footer__text{
+    margin-top: 0;
+}
+.footer__iconBox {
+    margin-inline: 0;
+}
+    
+}

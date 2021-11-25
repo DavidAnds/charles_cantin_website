@@ -98,6 +98,7 @@
     }
     .prices__title {
         font-size: 1.5rem;
+        margin-left: 20px;
     }
 
     .prices__imgBox {

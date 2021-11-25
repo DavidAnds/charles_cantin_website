@@ -48,7 +48,7 @@ export default function gallery(props) {
                     className={styles.filter__btn}
                     onClick={toggleFilterFunc}
                 >
-                    Filter v
+                    Filter <span className={styles.filter__arrowDown}>v</span>
                 </button>
                 <div
                     className={

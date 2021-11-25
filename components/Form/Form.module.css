@@ -1,3 +1,5 @@
+/* **********************************
+******************* Form container */
 .form {
     max-width:  600px;
 }
@@ -7,6 +9,8 @@
     letter-spacing: .02em;
 }
 
+/* **********************************
+******************* Form group */
 .form__group {
     margin-bottom: 20px;
 }
@@ -15,11 +19,12 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 10px;
 }
-
 .form__item {
     margin-top: 30px;
 }
 
+/* **********************************
+******************* Form input & textarea */
 .form__input,
 .form__textarea {
     border: none;
@@ -30,7 +35,6 @@
     padding: 0px 8px 2px;
     color: var(--light-black);
 }
-
 .form__label {
     display: block;
     font-size: 0.875rem;
@@ -40,7 +44,6 @@
     margin-top: 2px;
     margin-left: 8px;
 }
-
 .form__textarea {
     height: 150px;
 }
@@ -48,11 +51,13 @@
     display: none;
 }
 
+
+/* **********************************
+******************* BTN */
 .btn{
     display: flex;
     justify-content: flex-end;
 }
-
 .btn__item {
     display: block;
     font-size: 0.9375rem;
@@ -66,8 +71,37 @@
     background-color: white;
     cursor: pointer;
 }
-
 .btn__item:hover {
     color: white;
     background-color: var(--dark-blue);
+}
+
+/* **********************************
+******************* Info */
+.info{
+    position: fixed;
+    z-index: 10000;
+    background-color: rgba(3, 3, 3, .1);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.info__none {
+    display: none;
+}
+.info__textBox {
+    background: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    outline: 5px solid var(--dark-blue);
+}
+.info__text {
+    color: var(--dark-blue);
+    font-size: 1.2rem;
+    font-family: var(--font-crimson);
 }

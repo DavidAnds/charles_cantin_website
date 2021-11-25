@@ -25,6 +25,11 @@
     cursor: pointer;
     border: 2px solid var(--dark-blue);
 }
+.filter__arrowDown{
+    font-family: var(--font-josefin);
+    font-size: 1.4rem;
+    font-weight: 200;
+}
 .filter__btn:hover {
     background-color: var(--dark-blue);
     color: white;

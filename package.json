@@ -1,5 +1,5 @@
 {
-  "name": "charles_cantin-site",
+  "name": "charles_cantin_website",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,6 +8,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "emailjs": "^3.7.0",
+    "emailjs-com": "^3.2.0",
     "next": "12.0.4",
     "react": "17.0.2",
     "react-dom": "17.0.2"

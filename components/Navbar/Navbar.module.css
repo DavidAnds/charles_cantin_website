@@ -1,6 +1,14 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20000;
+}
+
 /* **************************************
 ********************* Container */
-.navbar {
+.navbar__container {
     padding-block: 5px;
     background-color: white;
     z-index: 1000;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import Head from "next/head";
 import style from "../styles/Home.module.css";
 import Link from "next/link"
@@ -7,7 +7,7 @@ import FontLink from "../components/FontLink/FontLink";
 
 export default function Home(props) {
     
-    const [background, setBackground] = useState(`http://localhost:1337${props.data.background.url}`)
+    const background = `https://protected-escarpment-88743.herokuapp.com${props.data.background.url}`
     
     return (
         <div className={style.home} style={{backgroundImage: 'url' + '(' + background + ')'}} >
@@ -18,7 +18,13 @@ export default function Home(props) {
                     name='description'
                     content="Page d'accueil du site portfolio du photographe Charles Cantin, "
                 />
-                <link rel='icon' href='/favicon.ico' />
+                <meta charset='UTF-8' />
+                <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+                <meta
+                    name='viewport'
+                    content='width=device-width, initial-scale=1.0'
+                />
+                <meta name="keywords" content="photographie, image, contact"/>
             </Head>
 
            <LogoBox />
@@ -51,8 +57,10 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-    const gallery = await fetch("http://localhost:1337/home-background");
-    const data = await gallery.json();
+    const bg = await fetch("https://protected-escarpment-88743.herokuapp.com/home-background");
+    const data = await bg.json();
+
+    
 
     return {
         props: {

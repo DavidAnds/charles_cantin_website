@@ -15,55 +15,57 @@ export default function Navbar() {
 
     return (
         <div className={styles.navbar}>
-            <LogoBox />
+            <div className={styles.navbar__container}>
+                <LogoBox />
 
-            <button className={styles.navbar__btn} onClick={toggleNav}>
-                {toggle ? (
-                    <div className={styles.navbar__closeIconBox}>
-                        <Image
-                            src={close}
-                            width='32'
-                            height='32'
-                            className={styles.navbar__closeIcon}
-                        />
-                    </div>
-                ) : (
-                    <div className={styles.navbar__hamIconBox}>
-                        <Image
-                            src={hamburger}
-                            width='32'
-                            height='32'
-                            className={styles.navbar__hamIcon}
-                        />
-                    </div>
-                )}
-            </button>
+                <button className={styles.navbar__btn} onClick={toggleNav}>
+                    {toggle ? (
+                        <div className={styles.navbar__closeIconBox}>
+                            <Image
+                                src={close}
+                                width='32'
+                                height='32'
+                                className={styles.navbar__closeIcon}
+                            />
+                        </div>
+                    ) : (
+                        <div className={styles.navbar__hamIconBox}>
+                            <Image
+                                src={hamburger}
+                                width='32'
+                                height='32'
+                                className={styles.navbar__hamIcon}
+                            />
+                        </div>
+                    )}
+                </button>
 
-            <nav
-                className={
-                    toggle
-                        ? `${styles.navbar__nav} ${styles.navbar__nav_active}`
-                        : styles.navbar__nav
-                }
-            >
-                <ul className={styles.nav__list}>
-                    <li className={styles.nav__item}>
-                        <Link href='/gallery'>
-                            <a className={styles.nav__link}>Galerie</a>
-                        </Link>
-                    </li>
-                    <li className={styles.nav__item}>
-                        <Link href='/contact'>
-                            <a className={styles.nav__link}>Contact</a>
-                        </Link>
-                    </li>
-                    <li className={styles.nav__item}>
-                        <Link href='/prices'>
-                            <a className={styles.nav__link}>Tarifs</a>
-                        </Link>
-                    </li>
-                </ul>
-            </nav>
+                <nav
+                    className={
+                        toggle
+                            ? `${styles.navbar__nav} ${styles.navbar__nav_active}`
+                            : styles.navbar__nav
+                    }
+                >
+                    <ul className={styles.nav__list}>
+                        <li className={styles.nav__item}>
+                            <Link href='/gallery'>
+                                <a className={styles.nav__link}>Galerie</a>
+                            </Link>
+                        </li>
+                        <li className={styles.nav__item}>
+                            <Link href='/contact'>
+                                <a className={styles.nav__link}>Contact</a>
+                            </Link>
+                        </li>
+                        <li className={styles.nav__item}>
+                            <Link href='/prices'>
+                                <a className={styles.nav__link}>Tarifs</a>
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     );
 }

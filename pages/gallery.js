@@ -7,8 +7,11 @@ import Footer from "../components/Footer/Footer";
 import Title from "../components/Title/Title";
 
 export default function gallery(props) {
-    const [galeryItems, setGaleryItems] = useState(props.data);
+    const [galeryItems, setGaleryItems] = useState(props.dataGalleries);
     const [toggleFilter, setToggleFilter] = useState(false);
+
+    console.log(props.dataCategories);
+    const categories = props.dataCategories;
 
     const toggleFilterFunc = () => {
         setToggleFilter(!toggleFilter);
@@ -18,9 +21,9 @@ export default function gallery(props) {
         let filteredItems = {};
 
         if (categoryName === "tout") {
-            filteredItems = props.data;
+            filteredItems = props.dataGalleries;
         } else {
-            filteredItems = props.data.filter(function (item) {
+            filteredItems = props.dataGalleries.filter(function (item) {
                 return item.category.name.toLowerCase() === categoryName;
             });
         }
@@ -37,7 +40,17 @@ export default function gallery(props) {
                     name='description'
                     content='La galerie des photographie prise par Charles Cantin'
                 />
-                <link rel='icon' href='/favicon.ico' />
+
+                <meta charset='UTF-8' />
+                <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+                <meta
+                    name='viewport'
+                    content='width=device-width, initial-scale=1.0'
+                />
+                <meta
+                    name='keywords'
+                    content='photographie, image, mariage, portrait, couple, mariage, famille'
+                />
             </Head>
             <FontLink />
             <Navbar />
@@ -63,42 +76,17 @@ export default function gallery(props) {
                     >
                         tout
                     </button>
-                    <button
-                        className={`${styles.filter__btn} ${styles.filter__btn_blue}`}
-                        onClick={() => filterFunc("bébé")}
-                    >
-                        bébé
-                    </button>
-                    <button
-                        className={`${styles.filter__btn} ${styles.filter__btn_blue}`}
-                        onClick={() => filterFunc("couple")}
-                    >
-                        couple
-                    </button>
-                    <button
-                        className={`${styles.filter__btn} ${styles.filter__btn_blue}`}
-                        onClick={() => filterFunc("famille")}
-                    >
-                        famille
-                    </button>
-                    <button
-                        className={`${styles.filter__btn} ${styles.filter__btn_blue}`}
-                        onClick={() => filterFunc("grossesse")}
-                    >
-                        grossesse
-                    </button>
-                    <button
-                        className={`${styles.filter__btn} ${styles.filter__btn_blue}`}
-                        onClick={() => filterFunc("mariage")}
-                    >
-                        mariage
-                    </button>
-                    <button
-                        className={`${styles.filter__btn} ${styles.filter__btn_blue}`}
-                        onClick={() => filterFunc("portrait")}
-                    >
-                        portrait
-                    </button>
+
+                    {categories.map((item) => {
+                        return (
+                            <button
+                                className={`${styles.filter__btn} ${styles.filter__btn_blue}`}
+                                onClick={() => filterFunc(item.name)}
+                            >
+                                {item.name}
+                            </button>
+                        );
+                    })}
                 </div>
             </div>
 
@@ -108,14 +96,18 @@ export default function gallery(props) {
                         <div key={item.id} className={styles.gallery__item}>
                             <div className={styles.gallery__imgBox}>
                                 <img
-                                    src={`http://localhost:1337${item.pic[0].url}`}
+                                    src={`https://protected-escarpment-88743.herokuapp.com${item.pic[0].url}`}
                                     alt=''
                                     className={styles.gallery__img}
                                 />
                             </div>
                             <div className={styles.gallery__textBox}>
-                                <h2 className={styles.gallery__title}>{item.name}</h2>
-                                <p className={styles.gallery__text}>{item.category.name}</p>
+                                <h2 className={styles.gallery__title}>
+                                    {item.name}
+                                </h2>
+                                <p className={styles.gallery__text}>
+                                    {item.category.name}
+                                </p>
                             </div>
                         </div>
                     );
@@ -128,12 +120,20 @@ export default function gallery(props) {
 }
 
 export async function getStaticProps() {
-    const gallery = await fetch("http://localhost:1337/galleries");
-    const data = await gallery.json();
+    const galleries = await fetch(
+        "https://protected-escarpment-88743.herokuapp.com/galleries"
+    );
+    const dataGalleries = await galleries.json();
+
+    const categories = await fetch(
+        "https://protected-escarpment-88743.herokuapp.com/categories"
+    );
+    const dataCategories = await categories.json();
 
     return {
         props: {
-            data,
+            dataGalleries,
+            dataCategories,
         },
     };
 }

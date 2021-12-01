@@ -6,7 +6,7 @@ import styles from "../styles/Gallery.module.css";
 import Footer from "../components/Footer/Footer";
 import Title from "../components/Title/Title";
 
-export default function gallery(props) {
+export default function Gallery(props) {
     const [galeryItems, setGaleryItems] = useState(props.dataGalleries);
     const [toggleFilter, setToggleFilter] = useState(false);
 
@@ -42,7 +42,7 @@ export default function gallery(props) {
                 />
 
                 <meta charset='UTF-8' />
-                <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+                <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
                 <meta
                     name='viewport'
                     content='width=device-width, initial-scale=1.0'
@@ -82,6 +82,7 @@ export default function gallery(props) {
                             <button
                                 className={`${styles.filter__btn} ${styles.filter__btn_blue}`}
                                 onClick={() => filterFunc(item.name)}
+                                key={item.id}
                             >
                                 {item.name}
                             </button>

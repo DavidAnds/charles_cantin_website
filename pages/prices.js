@@ -6,15 +6,15 @@ import Navbar from "../components/Navbar/Navbar";
 import Title from "../components/Title/Title";
 import styles from "../styles/Prices.module.css";
 
-export default function prices(props) {
-    const [tarif, setTarif] = useState(props.data);
+export default function Prices(props) {
+    const tarif = props.data
 
     return (
         <>  
              <Head>
                 <title>Charles Cantin - Tarifs</title>
                 <meta charset='UTF-8' />
-                <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+                <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
                 <meta
                     name='viewport'
                     content='width=device-width, initial-scale=1.0'

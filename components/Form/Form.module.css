@@ -80,7 +80,7 @@
 ******************* Info */
 .info{
     position: fixed;
-    z-index: 10000;
+    z-index: 1000000;
     background-color: rgba(3, 3, 3, .1);
     top: 0;
     bottom: 0;

@@ -9,8 +9,6 @@ import Title from "../components/Title/Title";
 export default function Gallery(props) {
     const [galeryItems, setGaleryItems] = useState(props.dataGalleries);
     const [toggleFilter, setToggleFilter] = useState(false);
-
-    console.log(props.dataCategories);
     const categories = props.dataCategories;
 
     const toggleFilterFunc = () => {

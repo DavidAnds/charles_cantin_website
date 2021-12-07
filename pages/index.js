@@ -60,8 +60,6 @@ export async function getStaticProps() {
     const bg = await fetch("https://protected-escarpment-88743.herokuapp.com/home-background");
     const data = await bg.json();
 
-    
-
     return {
         props: {
             data,
